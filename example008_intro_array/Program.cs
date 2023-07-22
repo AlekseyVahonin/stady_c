@@ -1,16 +1,22 @@
 ﻿// Задача на поиск max из 9 чисел
 
-int a1 = 12; int a4 = 10; int a7 = 13;
-int a2 = 45; int a5 = 9;  int a8 = 17;
-int a3 = 65; int a6 = 8;  int a9 = 19;
+int[] numbers = { 10, 12, 15, 2, 7, 15 };
 
-int Max(int number1, int number2, int number3)
+int Max(int[] array)
 {
-    int max = number1;
+    int max = array[0];
+    int index = 1;
+    int count = array.Length;
 
-    if (max < number2){max = number2;}
-    if (max < number3){max = number3;}
+    while (index <= count-1)
+    {
+        if (max < array[index])
+        {
+            max = array[index];
+        }
+        index++;
+    }
     return max;
 }
-int max = Max(Max(a1, a2, a3), Max(a4, a5, a6), Max(a7, a8, a9));
+int max = Max(numbers);
 Console.WriteLine(max);
