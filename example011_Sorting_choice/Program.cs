@@ -10,15 +10,18 @@ void SortingChoice(int[] arr)
 
     for (int i = 0; i < length; i++)
     {
-        for (int j = i; j < length; j++)
+        int minIndex = i;
+        for (int j = i + 1; j < length; j++)
         {
-            if (arr[i] < arr[j])
+            if (arr[minIndex] > arr[j])
             {
-                temp = arr[i];
-                arr[i] = arr[j];
-                arr[j] = temp;
+                minIndex = j;
             }
         }
+        temp = arr[i];
+        arr[i] = arr[minIndex];
+        arr[minIndex] = temp;
+
         Console.Write($" {arr[i]} ");
     }
 }
