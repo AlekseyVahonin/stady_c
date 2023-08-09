@@ -5,19 +5,16 @@ SortingChoice(array);
 
 void SortingChoice(int[] arr)
 {
-    int length = arr.Length;
     int temp = 0;
 
-    for (int i = 0; i < length; i++)
+    for (int i = 0; i < arr.Length; i++)
     {
         int minIndex = i;
-        for (int j = i + 1; j < length; j++)
+        for (int j = i + 1; j < arr.Length; j++)
         {
-            if (arr[minIndex] > arr[j])
-            {
-                minIndex = j;
-            }
+            if (arr[minIndex] > arr[j]) minIndex = j;
         }
+
         temp = arr[i];
         arr[i] = arr[minIndex];
         arr[minIndex] = temp;
